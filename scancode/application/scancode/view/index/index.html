@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>中资思看后台管理系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+
+<body>
+    <section id="container">
+        {include file="common/header"}
+        {include file="common/aside"}
+
+        <!--#include file="header.html"-->
+        <!--#include file="aside.html"-->
+        <section class="main-content-wrapper">
+            <section id="main-content">
+                
+            </section>
+            <!--#include file="copyright.html"-->
+             {include file="common/copyright" }
+        </section>
+    </section>
+
+
+    
+    <!--#include file="footer.html"-->
+     {include file="common/footer" }
+    <script src="assets/js/echarts.min.js"></script>
+    <script>
+    var myChart = echarts.init(document.getElementById('main'));
+    option = {
+        title: {
+            text: ''
+        },
+        tooltip: {},
+        animationDurationUpdate: 1500,
+        animationEasingUpdate: 'quinticInOut',
+        label: {
+            normal: {
+                show: true,
+                textStyle: {
+                    fontSize: 12
+                },
+            }
+        },
+        series: [
+
+            {
+                type: 'graph',
+                layout: 'force',
+                symbolSize: 45,
+                focusNodeAdjacency: false,
+                roam: true,
+                categories: [{
+                    name: '1级',
+                    itemStyle: {
+                        normal: {
+                            color: "#eb605f",
+                        }
+                    }
+                }, {
+                    name: '2级',
+                    itemStyle: {
+                        normal: {
+                            color: "#4e89c6",
+                        }
+                    }
+                }],
+                label: {
+                    normal: {
+                        show: true,
+                        textStyle: {
+                            fontSize: 10
+                        },
+                    }
+                },
+                force: {
+                    repulsion: 800
+                },
+                edgeSymbolSize: [4, 50],
+                edgeLabel: {
+                    normal: {
+                        show: true,
+                        textStyle: {
+                            fontSize: 10
+                        },
+                        formatter: "{c}"
+                    }
+                },
+                data: [{
+                    //数据部分
+                    /*
+                    name:真实姓名
+                    draggable:是否可拖动
+                    category:默认1
+                    */
+                    "name": "我",
+                    "draggable": true,
+                }, {
+                    "name": "001",
+                    "category": 1,
+                    "draggable": true,
+                }, {
+                    "name": "002",
+                    "category": 1,
+                    "draggable": true,
+                }, {
+                    "name": "003",
+                    "category": 1,
+                    "draggable": true,
+                }, {
+                    "name": "004",
+                    "category": 1,
+                    "draggable": true,
+                }, {
+                    "name": "005",
+                    "category": 1,
+                    "draggable": true,
+                }, {
+                    "name": "006",
+                    "category": 1,
+                    "draggable": true,
+                }, {
+                    "name": "007",
+                    "category": 1,
+                    "draggable": true,
+                }],
+                links: [{
+                    //关系部分
+                    /*
+                    source:对应以上数据name的i值,如link里面第12条数据里的source为1，则此人在data数据第2条的名下；
+                    target:设为i值即可
+                    value:关系
+                    */
+                    "source": 0,
+                    "target": 1,
+                    "value": "推荐"
+                }, {
+                    "source": 0,
+                    "target": 2,
+                    "value": "推荐"
+                }, {
+                    "source": 0,
+                    "target": 3,
+                    "value": "推荐"
+                }, {
+                    "source": 0,
+                    "target": 4,
+                    "value": "推荐"
+                }, {
+                    "source": 1,
+                    "target": 5,
+                    "value": "推荐"
+                }, {
+                    "source": 0,
+                    "target": 6,
+                    "value": "推荐"
+                }, {
+                    "source": 4,
+                    "target": 7,
+                    "value": "推荐"
+                }]
+
+            }
+        ]
+    };
+    myChart.setOption(option)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Developed By M Abdur Rokib Promy">
+    <meta name="author" content="cosmic">
+    <meta name="keywords" content="Bootstrap 3, Template, Theme, Responsive, Corporate, Business">
+    <link rel="shortcut icon" href="__static__/index/img/favicon.png">
+
+    <title>行业新闻 | 中资思看</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="__static__/index/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__static__/index/css/theme.css" rel="stylesheet">
+    <link href="__static__/index/css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="__static__/index/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="__static__/index/css/flexslider.css"/>
+    <link href="__static__/index/assets/bxslider/jquery.bxslider.css" rel="stylesheet" />
+    <link rel="stylesheet" href="__static__/index/css/animate.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+
+      <!-- Custom styles for this template -->
+    <link href="__static__/index/css/style.css" rel="stylesheet">
+    <link href="__static__/index/css/style-responsive.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+      <script src="__static__/index/__static__/index/__static__/index/css/html5shiv.js"></script>
+      <script src="__static__/index/__static__/index/__static__/index/css/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!--header start-->
+     {include file="common/header"}
+    <!--header end-->
+
+    <!--breadcrumbs start-->
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-4">
+                    <h1>news</h1>
+                </div>
+                <div class="col-lg-8 col-sm-8">
+                    <ol class="breadcrumb pull-right">
+                        <li><a href="index.html">首页</a></li>
+                        <li class="active">行业新闻</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs end-->
+
+    <!--container start-->
+    <div class="gray-bg">
+    <div class="fof">
+
+        <div class="container">
+        	<br>
+        	<br>
+            {foreach name="news" item="vo"}
+        	<div class="blog-item wow fadeInUp">             
+            		<div class="blog-img ">
+                 	 <img src="http://scancode.com/{$vo['img']}" alt=""/>
+            		</div>
+            		<br>
+            		<a href="{:url('index/newsdetail',array('id'=>$vo['id']))}" target="_blank">
+            			<h1>{$vo['title']}</h1>
+            		</a>
+            		<span class="date">{$vo['time']}</span>     
+                    <br>     		
+            		<p>
+            			{$vo['summary']}
+            		</p>
+        	</div>
+        	{/foreach}
+        	
+        </div>    
+        
+        </div>
+    </div>
+    <!--container end-->
+
+     <!--footer start-->
+     {include file="common/footer"}
+     <!--small footer end-->
+
+   <!-- js placed at the end of the document so the pages load faster -->
+    <script src="__static__/index/js/jquery.js"></script>
+    <script src="__static__/index/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="__static__/index/js/hover-dropdown.js"></script>
+    <script defer src="__static__/index/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="assets/bxslider/jquery.bxslider.js"></script>
+
+    <script src="__static__/index/js/jquery.easing.min.js"></script>
+    <script src="__static__/index/js/link-hover.js"></script>
+
+
+     <!--common script for all pages-->
+    <script src="__static__/index/js/common-scripts.js"></script>
+
+
+    <script src="__static__/index/js/wow.min.js"></script>
+    <script>
+        wow = new WOW(
+          {
+            boxClass:     'wow',      // default
+            animateClass: 'animated', // default
+            offset:       0          // default
+          }
+        )
+        wow.init();
+    </script>
+
+  </body>
+</html>
+

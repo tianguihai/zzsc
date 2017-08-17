@@ -1,0 +1,78 @@
+<header class="head-section">
+      <div class="navbar navbar-default navbar-static-top container">
+          <div class="navbar-header">
+              <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse"
+              type="button"><span class="icon-bar"></span> <span class="icon-bar"></span>
+              <span class="icon-bar"></span></button> <a class="navbar-brand" href="index.html">中资<span>思看</span></a>
+          </div>
+
+          <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                   {foreach name="cates" item="vo"}
+                  <li class="">
+                      {if !isset($vo['childs'])}
+                      <a href="{$vo['url']}"><b>{$vo['catename']}</b></a>
+                      {else/}
+                      <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover="dropdown" data-toggle="dropdown" href="{$vo['url']}"><b>{$vo['catename']}</b> <i class="fa fa-angle-down"></i>
+                      </a>
+
+                      <ul class="dropdown-menu">
+                      {foreach name="vo['childs']" item="c"}
+                          <li>
+                              <a href="{$c['url']}" target="_blank">{$c['catename']}</a>
+                          </li>
+                      {/foreach}    
+                      </ul>
+                      {/if}
+                  </li> 
+                    {/foreach}
+                 
+                 <!--  <li class="dropdown">
+                      <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover="dropdown" data-toggle="dropdown" href="project.html"><b>项目</b> <i class="fa fa-angle-down"></i>
+                      </a>
+
+                      <ul class="dropdown-menu">
+                          <li>
+                              <a href="http://19710601.com" target="_blank">扫码科技</a>
+                          </li>
+
+                          <li>
+                              <a href="http://yh.19880619.com" target="_blank">银河系统</a>
+                          </li>
+
+                          <li>
+                              <a href="http://777.top:8080" target="_blank">跨境电商</a>
+                          </li>
+                          
+                      </ul>
+                  </li> -->
+
+                 <!--  <li class="dropdown">
+                      <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover="dropdown" data-toggle="dropdown" href="#"><b>资讯</b> <i class="fa fa-angle-down"></i>
+                      </a>
+
+                      <ul class="dropdown-menu">
+                          <li>
+                              <a href="news.html">行业新闻</a>
+                          </li>
+                          
+                          <li>
+                              <a href="enterprises.html">企业动态</a>
+                          </li>
+
+                         
+                      </ul>
+                  </li>
+
+                  <li class="">
+                      <a href="qianzhan.html"><b>前瞻</b></a>
+                  </li>
+
+                  <li class="">
+                      <a href="contact.html"><b>联系我们</b></a>
+                  </li> -->
+
+              </ul>
+          </div>
+      </div>
+    </header>
